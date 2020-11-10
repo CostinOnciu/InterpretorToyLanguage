@@ -1,0 +1,16 @@
+ExeStack:
+[int a, a=true]
+SymTable:
+{}
+Out:
+[]
+FileTable:{}
+
+ExeStack:
+[a=true]
+SymTable:
+{a=0}
+Out:
+[]
+FileTable:{}
+

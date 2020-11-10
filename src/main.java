@@ -13,9 +13,7 @@ import View.*;
 import java.util.*;
 
 public class main {
-    public static void main(String[] args) throws MyExceptions {
-        BaseRepository repo = new InMemoryRepository();
-
+    public static void pass (String[] args) throws MyExceptions {
         var stack1 = new Stack<Statement>();
         stack1.push(new CompoundStatement(new VarDeclStatement(new IntType(),"v"),
                 new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(2))),
@@ -38,19 +36,32 @@ public class main {
         stack4.push(new AssignStatement("a",new ValueExpression(new BoolValue(true))));
         var stack5 = new Stack<Statement>();
         stack5.push(new CompoundStatement(new VarDeclStatement(new IntType(),"a"),new AssignStatement("a",new ValueExpression(new BoolValue(true)))));
-        ProgramState state1 = new ProgramState(stack1, new HashMap<>(),new ArrayList<>());
-        ProgramState state2 = new ProgramState(stack2, new HashMap<>(),new ArrayList<>());
-        ProgramState state3 = new ProgramState(stack3, new HashMap<>(),new ArrayList<>());
-        ProgramState state4 = new ProgramState(stack4, new HashMap<>(),new ArrayList<>());
-        ProgramState state5 = new ProgramState(stack5, new HashMap<>(),new ArrayList<>());
-        repo.add(state1);
-        repo.add(state2);
-        repo.add(state3);
-        repo.add(state4);
-        repo.add(state5);
+        var stack6 = new Stack<Statement>();
+        stack6.push(new CompoundStatement(new VarDeclStatement(new StringType(),"varf"),
+                new CompoundStatement(new AssignStatement("varf",new ValueExpression(new StringValue("test.in"))),
+                        new CompoundStatement(new OpenRFileStatement(new VariableExpression("varf")),
+                                new CompoundStatement(new VarDeclStatement(new IntType(),"varc"),
+                                        new CompoundStatement(new ReadFileStatement(new VariableExpression("varf"),"varc"),
+                                                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
+                                                        new CompoundStatement(new ReadFileStatement(new VariableExpression("varf"),"varc"),
+                                                                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
+                                                                        new CloseRFileStatement(new VariableExpression("varf")))))))))));
 
+        ProgramState state1 = new ProgramState(stack1, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state2 = new ProgramState(stack2, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state3 = new ProgramState(stack3, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state4 = new ProgramState(stack4, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state5 = new ProgramState(stack5, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state6 = new ProgramState(stack6, new HashMap<>(),new ArrayList<>(),new HashMap<>());
 
-        Controller controller = new Controller(repo);
+        BaseRepository repo1 = new InMemoryRepository(state1,"LogFile.txt");
+        BaseRepository repo2 = new InMemoryRepository(state1,"LogFile.txt");
+        BaseRepository repo3 = new InMemoryRepository(state1,"LogFile.txt");
+        BaseRepository repo4 = new InMemoryRepository(state1,"LogFile.txt");
+        BaseRepository repo5 = new InMemoryRepository(state1,"LogFile.txt");
+        BaseRepository repo6 = new InMemoryRepository(state1,"LogFile.txt");
+
+        Controller controller = new Controller(repo1);
         View view = new View(controller);
 
         view.run();

@@ -5,7 +5,7 @@ import Model.Expression.Expression;
 import Model.ProgramState;
 
 public class PrintStatement implements Statement{
-    Expression expression;
+    private final Expression expression;
 
     public PrintStatement(Expression expression) {
         this.expression = expression;

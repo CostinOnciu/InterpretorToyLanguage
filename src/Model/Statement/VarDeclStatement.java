@@ -8,8 +8,8 @@ import Model.Value.IntValue;
 import Model.Value.BoolValue;
 
 public class VarDeclStatement implements Statement {
-    Type type;
-    String name;
+    private final Type type;
+    private final String name;
 
     public VarDeclStatement(Type type, String name) {
         this.type = type;
@@ -27,13 +27,9 @@ public class VarDeclStatement implements Statement {
         var map = state.getSymbolTable();
 
         if (map.containsKey(name)){
-            throw new AlreadyDeclaredVariable("The variable " + name + " is already declared");
+            throw new AlreadyDeclaredVariable(this.toString()+" -> The variable " + name + " is already declared");
         }
-
-        if(type.toString().equals("bool"))
-            map.put(name,new BoolValue(false));
-        else
-            map.put(name,new IntValue(0));
+        map.put(name,type.defaultValue());
         return state;
     }
 }

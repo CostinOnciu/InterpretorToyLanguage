@@ -1,12 +1,19 @@
 package Controller;
 
+import Model.Exceptions.IOException;
 import Model.Exceptions.MyExceptions;
 import Model.ProgramState;
 import Model.Statement.Statement;
 import Repository.BaseRepository;
+import Repository.InMemoryRepository;
+
+import javax.imageio.IIOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class Controller {
-    BaseRepository repository;
+    private BaseRepository repository;
 
     public Controller(BaseRepository repository) {
         this.repository = repository;
@@ -23,19 +30,27 @@ public class Controller {
     }
 
     public void allStep(int index) throws MyExceptions{//ProgramState state){
-        ProgramState currentState = repository.getByIndex(index-1);
+        ProgramState currentState = repository.getCrtPrg();
         var stack = currentState.getExecutionStack();
 
-        System.out.println(stack);
-        System.out.println(currentState.getSymbolTable());
-        System.out.println(currentState.getOutputList());
-
-        while (!stack.empty()){
+        while (!stack.empty()) {
             oneStep(currentState);
+            try {
+                repository.logProgramStateExec();
+            } catch (java.io.IOException error) {
+                throw new IOException(error.getMessage());
+            }
+        }
 
-            System.out.println(stack);
-            System.out.println(currentState.getSymbolTable());
-            System.out.println(currentState.getOutputList());
+        var r = (InMemoryRepository)repository;
+        try {
+            var logFile = new PrintWriter(new BufferedWriter(new FileWriter(r.getLogFilePath(), true)));
+            logFile.flush();
+            logFile.write("-----------------------------------------------\n");
+            logFile.flush();
+        }
+        catch (java.io.IOException error){
+            throw new IOException("IO error");
         }
     }
 }

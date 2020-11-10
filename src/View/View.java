@@ -52,6 +52,9 @@ public class View {
                 case "5":
                     controller.allStep(Integer.parseInt(operation));
                     break;
+                case "6":
+                    controller.allStep(Integer.parseInt(operation));
+                    break;
                 default:
                     System.out.println("Invalid operation");
                     break;

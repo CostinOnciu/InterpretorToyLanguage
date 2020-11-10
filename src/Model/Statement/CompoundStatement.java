@@ -4,8 +4,8 @@ import Model.Exceptions.MyExceptions;
 import Model.ProgramState;
 
 public class CompoundStatement implements Statement{
-    Statement leftStatement;
-    Statement rightStatement;
+    private final Statement leftStatement;
+    private final Statement rightStatement;
 
     public CompoundStatement(Statement leftStatement, Statement rightStatement) {
         this.leftStatement = leftStatement;

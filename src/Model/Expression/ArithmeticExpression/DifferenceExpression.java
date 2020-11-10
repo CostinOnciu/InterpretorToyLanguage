@@ -3,14 +3,16 @@ package Model.Expression.ArithmeticExpression;
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.VariableNotInteger;
 import Model.Expression.Expression;
+import Model.Type.BoolType;
+import Model.Value.BoolValue;
 import Model.Value.IntValue;
 import Model.Value.Value;
 
 import java.util.Map;
 
 public class DifferenceExpression extends ArithmeticExpression{
-    Expression left;
-    Expression right;
+    private final Expression left;
+    private final Expression right;
 
     public DifferenceExpression(Expression left, Expression right) {
         this.left = left;
@@ -24,9 +26,9 @@ public class DifferenceExpression extends ArithmeticExpression{
 
     @Override
     public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
-        if(left.evaluate(symbolTable).getType().toString().equals("bool"))
+        if(left.evaluate(symbolTable).getType().equals(new BoolType()))
             throw new VariableNotInteger("The left expression does not return an integer");
-        if(right.evaluate(symbolTable).getType().toString().equals("bool"))
+        if(right.evaluate(symbolTable).getType().equals(new BoolType()))
             throw new VariableNotInteger("The right expression does not return an integer");
 
         var leftInt = (IntValue)left.evaluate(symbolTable);

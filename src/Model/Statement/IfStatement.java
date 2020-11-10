@@ -7,9 +7,9 @@ import Model.ProgramState;
 import Model.Value.BoolValue;
 
 public class IfStatement implements Statement{
-    Expression expression;
-    Statement thenStatement;
-    Statement elseStatement;
+    private final Expression expression;
+    private final Statement thenStatement;
+    private final Statement elseStatement;
 
     public IfStatement(Expression expression, Statement thenStatement, Statement elseStatement) {
         this.expression = expression;
@@ -50,7 +50,7 @@ public class IfStatement implements Statement{
                 elseStatement.execute(state);
         }
         else{
-            throw new InvalidCondition("Conditional expression is not a boolean");
+            throw new InvalidCondition(this.toString()+" -> Conditional expression is not a boolean");
         }
         return state;
     }

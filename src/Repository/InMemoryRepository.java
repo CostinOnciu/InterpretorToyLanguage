@@ -2,21 +2,34 @@ package Repository;
 
 import Model.ProgramState;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryRepository implements BaseRepository{
-    List<ProgramState> list;
-    int length;
+    //private List<ProgramState> list;
+    ProgramState prg;
+    private String logFilePath;
+    //private int length;
 
-    public InMemoryRepository() {
-        this.list = new ArrayList<ProgramState>();
-        this.length = 0;
+    public String getLogFilePath() {
+        return logFilePath;
     }
 
-    public InMemoryRepository(List<ProgramState> list,int length){
+    public InMemoryRepository(ProgramState prg, String logFilePath) {
+        //this.list = new ArrayList<ProgramState>();
+        //this.length = 0;
+        this.prg = prg;
+        this.logFilePath = logFilePath;
+    }
+
+    /*public InMemoryRepository(List<ProgramState> list,String logFilePath){
         this.list = list;
-        this.length = length;
+        this.length = list.toArray().length;
+        this.logFilePath = logFilePath;
     }
 
     @Override
@@ -38,5 +51,19 @@ public class InMemoryRepository implements BaseRepository{
     @Override
     public ProgramState getByIndex(int i) {
         return list.get(i);
+    }*/
+
+    @Override
+    public void logProgramStateExec() throws IOException {
+        var logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+        //logFile.append(getCrtPrg().toString());
+        logFile.flush();
+        logFile.write(prg.toString()+'\n');
+        logFile.flush();
+    }
+
+    @Override
+    public ProgramState getCrtPrg() {
+        return prg;
     }
 }

@@ -9,8 +9,8 @@ import Model.Type.Type;
 import Model.Value.*;
 
 public class AssignStatement implements Statement{
-    String name;
-    Expression value;
+    private final String name;
+    private final Expression value;
 
     public AssignStatement(String name, Expression value) {
         this.name = name;
@@ -43,7 +43,7 @@ public class AssignStatement implements Statement{
                 map.replace(name,val);
             }
             else {
-                throw new VariableTypeDifferent("Type of expression and type of variable do not match");
+                throw new VariableTypeDifferent(this.toString()+" -> Type of expression and type of variable do not match");
             }
         }
         return state;

@@ -4,14 +4,16 @@ import Model.Exceptions.MyExceptions;
 import Model.Exceptions.VariableNotBoolean;
 import Model.Exceptions.VariableNotInteger;
 import Model.Expression.Expression;
+import Model.Type.BoolType;
+import Model.Type.IntType;
 import Model.Value.BoolValue;
 import Model.Value.Value;
 
 import java.util.Map;
 
 public class AndExpression extends LogicExpression{
-    Expression left;
-    Expression right;
+    private final Expression left;
+    private final Expression right;
 
     public AndExpression(Expression left, Expression right) {
         this.left = left;
@@ -20,9 +22,9 @@ public class AndExpression extends LogicExpression{
 
     @Override
     public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
-        if(left.evaluate(symbolTable).getType().toString().equals("int"))
+        if(left.evaluate(symbolTable).getType().equals(new IntType()))
             throw new VariableNotBoolean("The left expression does not return an boolean");
-        if(right.evaluate(symbolTable).getType().toString().equals("int"))
+        if(right.evaluate(symbolTable).getType().equals(new IntType()))
             throw new VariableNotBoolean("The right expression does not return an boolean");
 
         var leftBool = (BoolValue)left.evaluate(symbolTable);
