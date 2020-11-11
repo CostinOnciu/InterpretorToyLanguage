@@ -60,6 +60,7 @@ public class InMemoryRepository implements BaseRepository{
         logFile.flush();
         logFile.write(prg.toString()+'\n');
         logFile.flush();
+        logFile.close();
     }
 
     @Override

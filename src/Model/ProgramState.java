@@ -44,7 +44,7 @@ public class ProgramState {
         return "ExeStack:\n" + printableStack.toString() + "\n" +
                 "SymTable:\n" + symbolTable.toString() + '\n' +
                 "Out:\n" + outputList.toString() +  "\n" +
-                "FileTable:" + fileTable.toString() + '\n';
+                "FileTable:" + fileTable.keySet().toString() + '\n';
     }
 
     public void addNewFile(String fileName,BufferedReader bufferedReader){
