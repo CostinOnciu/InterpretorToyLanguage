@@ -5,5 +5,5 @@ import Model.Value.Value;
 import java.util.*;
 
 public interface Expression {
-    Value evaluate(Map<String,Value> symbolTable) throws MyExceptions;
+    Value evaluate(Map<String,Value> symbolTable, Map<Integer,Value> heap) throws MyExceptions;
 }

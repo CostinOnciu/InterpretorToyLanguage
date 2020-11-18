@@ -13,7 +13,7 @@ public class CompoundStatement implements Statement{
     }
 
     public String toString(){
-        return "("+leftStatement.toString()+";"+rightStatement.toString()+")";
+        return "("+leftStatement.toString()+" | "+rightStatement.toString()+")";
     }
     public ProgramState execute(ProgramState state) throws MyExceptions {
         var stack = state.getExecutionStack();

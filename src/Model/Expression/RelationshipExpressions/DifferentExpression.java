@@ -20,11 +20,11 @@ public class DifferentExpression extends RelationshipExpression{
     }
 
     @Override
-    public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
-        if(left.evaluate(symbolTable).getType().equals(new IntType())) {
-            if (right.evaluate(symbolTable).getType().equals(new IntType())) {
-                var l = (IntValue) left.evaluate(symbolTable);
-                var r = (IntValue) right.evaluate(symbolTable);
+    public Value evaluate(Map<String, Value> symbolTable, Map<Integer,Value> heap) throws MyExceptions {
+        if(left.evaluate(symbolTable,heap).getType().equals(new IntType())) {
+            if (right.evaluate(symbolTable,heap).getType().equals(new IntType())) {
+                var l = (IntValue) left.evaluate(symbolTable,heap);
+                var r = (IntValue) right.evaluate(symbolTable,heap);
                 return new BoolValue(l.getValue() != r.getValue());
             }
             else

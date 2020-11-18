@@ -14,7 +14,7 @@ public class VariableExpression implements Expression{
     }
 
     @Override
-    public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
+    public Value evaluate(Map<String, Value> symbolTable, Map<Integer,Value> heap) throws MyExceptions {
         if(!symbolTable.containsKey(variable))
             throw new UndeclaredVariable(this.toString()+" -> Variable "+variable+" is not declared in this scope");
         return symbolTable.get(variable);

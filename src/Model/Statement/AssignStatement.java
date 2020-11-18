@@ -37,7 +37,7 @@ public class AssignStatement implements Statement{
             throw new UndeclaredVariable("Variable " + name + " is not declared in this scope");
         }
         else{
-            Value val = value.evaluate(map);
+            Value val = value.evaluate(map,state.getHeap());
             Type type = map.get(name).getType();
             if(val.getType().equals(type)){
                 map.replace(name,val);

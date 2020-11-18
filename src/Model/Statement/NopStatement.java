@@ -8,4 +8,9 @@ public class NopStatement implements Statement{
     public ProgramState execute(ProgramState state) throws MyExceptions {
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "noop";
+    }
 }

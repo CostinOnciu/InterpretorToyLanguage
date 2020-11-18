@@ -23,14 +23,14 @@ public class DivisionExpression extends ArithmeticExpression{
         return "("+left.toString() + "/" + right.toString()+")";
     }
     @Override
-    public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
-        if(left.evaluate(symbolTable).getType().equals(new BoolType()))
+    public Value evaluate(Map<String, Value> symbolTable, Map<Integer,Value> heap) throws MyExceptions {
+        if(left.evaluate(symbolTable,heap).getType().equals(new BoolType()))
             throw new VariableNotInteger("The left expression does not return an integer");
-        if(right.evaluate(symbolTable).getType().equals(new BoolType()))
+        if(right.evaluate(symbolTable,heap).getType().equals(new BoolType()))
             throw new VariableNotInteger("The right expression does not return an integer");
 
-        var leftInt = (IntValue)left.evaluate(symbolTable);
-        var rightInt = (IntValue)right.evaluate(symbolTable);
+        var leftInt = (IntValue)left.evaluate(symbolTable,heap);
+        var rightInt = (IntValue)right.evaluate(symbolTable,heap);
 
         if(rightInt.getValue() == 0)
             //throw new Exception();

@@ -19,14 +19,14 @@ public class OrExpression extends LogicExpression{
     }
 
     @Override
-    public Value evaluate(Map<String, Value> symbolTable) throws MyExceptions {
-        if(left.evaluate(symbolTable).getType().equals(new IntType()))
+    public Value evaluate(Map<String, Value> symbolTable, Map<Integer,Value> heap) throws MyExceptions {
+        if(left.evaluate(symbolTable,heap).getType().equals(new IntType()))
             throw new VariableNotBoolean("The left expression does not return an boolean");
-        if(right.evaluate(symbolTable).getType().equals(new IntType()))
+        if(right.evaluate(symbolTable,heap).getType().equals(new IntType()))
             throw new VariableNotBoolean("The right expression does not return an boolean");
 
-        var leftBool = (BoolValue)left.evaluate(symbolTable);
-        var rightBool = (BoolValue)right.evaluate(symbolTable);
+        var leftBool = (BoolValue)left.evaluate(symbolTable,heap);
+        var rightBool = (BoolValue)right.evaluate(symbolTable,heap);
 
         return new BoolValue(leftBool.getValue()|rightBool.getValue());
     }

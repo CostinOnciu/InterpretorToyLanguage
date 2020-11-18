@@ -47,12 +47,12 @@ public class main {
                                                                 new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
                                                                         new CloseRFileStatement(new VariableExpression("varf")))))))))));
 
-        ProgramState state1 = new ProgramState(stack1, new HashMap<>(),new ArrayList<>(),new HashMap<>());
-        ProgramState state2 = new ProgramState(stack2, new HashMap<>(),new ArrayList<>(),new HashMap<>());
-        ProgramState state3 = new ProgramState(stack3, new HashMap<>(),new ArrayList<>(),new HashMap<>());
-        ProgramState state4 = new ProgramState(stack4, new HashMap<>(),new ArrayList<>(),new HashMap<>());
-        ProgramState state5 = new ProgramState(stack5, new HashMap<>(),new ArrayList<>(),new HashMap<>());
-        ProgramState state6 = new ProgramState(stack6, new HashMap<>(),new ArrayList<>(),new HashMap<>());
+        ProgramState state1 = new ProgramState(stack1, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
+        ProgramState state2 = new ProgramState(stack2, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
+        ProgramState state3 = new ProgramState(stack3, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
+        ProgramState state4 = new ProgramState(stack4, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
+        ProgramState state5 = new ProgramState(stack5, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
+        ProgramState state6 = new ProgramState(stack6, new HashMap<>(),new ArrayList<>(),new HashMap<>(), new HashMap<>());
 
         BaseRepository repo1 = new InMemoryRepository(state1,"LogFile.txt");
         BaseRepository repo2 = new InMemoryRepository(state1,"LogFile.txt");

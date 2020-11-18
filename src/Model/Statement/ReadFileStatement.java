@@ -29,11 +29,11 @@ public class ReadFileStatement implements Statement{
             throw new UndeclaredVariable("Variable "+ varName +" was not declared in this scope");
         if(!(state.getSymbolTable().get(varName).getType().equals(new IntType())))
             throw new VariableNotInteger("Variable "+varName +" should be an integer");
-        if(!(left.evaluate(state.getSymbolTable()).getType().equals(new StringType())))
+        if(!(left.evaluate(state.getSymbolTable(),state.getHeap()).getType().equals(new StringType())))
             throw new MyExceptions(left.toString()+" -> Expression should return a string value");
 
         try {
-            var line = state.getFileTable().get(left.evaluate((state.getSymbolTable())).toString()).readLine();
+            var line = state.getFileTable().get(left.evaluate(state.getSymbolTable(),state.getHeap()).toString()).readLine();
             Statement exec;
             if(line == null) {
                 exec = new AssignStatement(varName, new ValueExpression(new IntType().defaultValue()));

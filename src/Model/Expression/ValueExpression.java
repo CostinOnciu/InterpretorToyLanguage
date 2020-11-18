@@ -2,11 +2,9 @@ package Model.Expression;
 
 import Model.Type.BoolType;
 import Model.Type.IntType;
+import Model.Type.ReferenceType;
 import Model.Type.StringType;
-import Model.Value.BoolValue;
-import Model.Value.IntValue;
-import Model.Value.StringValue;
-import Model.Value.Value;
+import Model.Value.*;
 
 import java.util.Map;
 
@@ -18,19 +16,22 @@ public class ValueExpression implements Expression{
     }
 
     @Override
-    public Value evaluate(Map<String, Value> symbolTable) {
+    public Value evaluate(Map<String, Value> symbolTable, Map<Integer,Value> heap) {
         if (value.getType().equals(new IntType())) {
-            IntValue i = (IntValue)value;
+            var i = (IntValue)value;
             return new IntValue(i.getValue());
         }
-        else if(value.getType().equals(new BoolType())){
-            BoolValue b = (BoolValue)value;
+        else if(value.getType().equals(new BoolType())) {
+            var b = (BoolValue)value;
             return new BoolValue(b.getValue());
         }
-        else if(value.getType().equals(new StringType()))
-        {
-            StringValue s = (StringValue)value;
+        else if(value.getType().equals(new StringType())) {
+            var s = (StringValue)value;
             return new StringValue(s.getValue());
+        }
+        else if(value.getType() instanceof ReferenceType) {
+            var r = (ReferenceValue)value;
+            return new ReferenceValue(r.getAddress(),r.getValueType());
         }
         return null;
     }

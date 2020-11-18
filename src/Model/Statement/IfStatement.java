@@ -31,9 +31,9 @@ public class IfStatement implements Statement{
 
     @Override
     public String toString() {
-        return "IF " +  expression.toString() + " THEN " +
-                thenStatement.toString() + " ELSE " +
-                elseStatement.toString();
+        return "IF(" +  expression.toString() + ") THEN " +
+                thenStatement.toString() + "ELSE " +
+                elseStatement.toString() + "END-IF";
     }
 
     @Override
@@ -41,7 +41,7 @@ public class IfStatement implements Statement{
         var stack = state.getExecutionStack();
         var map = state.getSymbolTable();
 
-        var exp = expression.evaluate(map);
+        var exp = expression.evaluate(map,state.getHeap());
         if(exp.getType().toString().equals("bool")) {
             BoolValue b = (BoolValue)exp;
             if(b.getValue())

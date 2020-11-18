@@ -26,7 +26,7 @@ public class PrintStatement implements Statement{
         var map = state.getSymbolTable();
         var out = state.getOutputList();
 
-        out.add(expression.evaluate(map));
+        out.add(expression.evaluate(map,state.getHeap()));
         return state;
     }
 }

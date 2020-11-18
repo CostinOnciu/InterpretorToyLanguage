@@ -17,13 +17,13 @@ public class OpenRFileStatement implements Statement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyExceptions {
-        if(!(expression.evaluate(state.getSymbolTable()).getType().equals(new StringType())))
+        if(!(expression.evaluate(state.getSymbolTable(),state.getHeap()).getType().equals(new StringType())))
             throw new MyExceptions("Filename should be a string");
-        if(state.getFileTable().containsKey(expression.evaluate(state.getSymbolTable()).toString()))
+        if(state.getFileTable().containsKey(expression.evaluate(state.getSymbolTable(),state.getHeap()).toString()))
             throw new MyExceptions("File already opened");
         try {
-            var reader = new BufferedReader(new FileReader(expression.evaluate(state.getSymbolTable()).toString()));
-            state.addNewFile(expression.evaluate(state.getSymbolTable()).toString(),reader);
+            var reader = new BufferedReader(new FileReader(expression.evaluate(state.getSymbolTable(),state.getHeap()).toString()));
+            state.addNewFile(expression.evaluate(state.getSymbolTable(),state.getHeap()).toString(),reader);
         }
         catch (Exception error)
         {
