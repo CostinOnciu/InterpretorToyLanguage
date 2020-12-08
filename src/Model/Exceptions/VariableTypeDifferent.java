@@ -7,4 +7,9 @@ public class VariableTypeDifferent extends MyExceptions{
     public VariableTypeDifferent(String message) {
         super(message);
     }
+
+    @Override
+    public String toString() {
+        return "VariableTypeDifferent{"+getMessage()+"}";
+    }
 }

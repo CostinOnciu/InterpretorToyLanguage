@@ -11,12 +11,9 @@ import Model.Value.Value;
 import java.util.Map;
 
 public class EqualExpression extends RelationshipExpression{
-    private final Expression left;
-    private final Expression right;
 
     public EqualExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
+        super(left, right);
     }
 
     @Override

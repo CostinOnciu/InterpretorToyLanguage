@@ -7,4 +7,9 @@ public class InvalidCondition extends MyExceptions{
     public InvalidCondition(String message) {
         super(message);
     }
+
+    @Override
+    public String toString() {
+        return "InvalidCondition{"+getMessage()+"}";
+    }
 }

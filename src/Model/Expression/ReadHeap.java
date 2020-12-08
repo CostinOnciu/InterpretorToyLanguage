@@ -3,6 +3,7 @@ package Model.Expression;
 import Model.Exceptions.MyExceptions;
 import Model.Type.IntType;
 import Model.Type.ReferenceType;
+import Model.Type.Type;
 import Model.Value.IntValue;
 import Model.Value.ReferenceValue;
 import Model.Value.Value;
@@ -23,6 +24,14 @@ public class ReadHeap implements Expression{
             throw new MyExceptions("Invalid type of expression");
         var xx = (ReferenceValue)x;
         return heap.get(xx.getAddress());
+    }
+
+    @Override
+    public Type typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type type = exp.typeCheck(typeEnv);
+        if(type instanceof ReferenceType)
+            return ((ReferenceType) type).getInnerType();
+        else throw new MyExceptions("Invalid type of expression");
     }
 
     @Override

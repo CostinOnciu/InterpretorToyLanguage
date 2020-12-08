@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Exceptions.MyExceptions;
 import Model.Statement.Statement;
 import Model.Value.Value;
 
@@ -13,13 +14,18 @@ public class ProgramState {
     private final List<Value> outputList;
     private final Map<String, BufferedReader> fileTable;
     private final Map<Integer,Value> heap;
+    private final int id;
+    private final int pid;
+    private int nextID=1;
 
-    public ProgramState(Stack<Statement> stack, Map<String, Value> map, List<Value> list, Map<String, BufferedReader> table, Map<Integer, Value> heap){
+    public ProgramState(Stack<Statement> stack, Map<String, Value> map, List<Value> list, Map<String, BufferedReader> table, Map<Integer, Value> heap,int id,int pid){
         executionStack = stack;
         symbolTable = map;
         outputList = list;
         fileTable = table;
         this.heap = heap;
+        this.id = id;
+        this.pid = pid;
     }
 
     public Stack<Statement> getExecutionStack() {
@@ -34,7 +40,9 @@ public class ProgramState {
         return outputList;
     }
 
-    public Map<Integer, Value> getHeap() { return heap; }
+    public Map<Integer, Value> getHeap() {
+        return heap;
+    }
 
     public Map<String, BufferedReader> getFileTable() {
         return fileTable;
@@ -44,7 +52,9 @@ public class ProgramState {
     public String toString() {
         var printableStack = Arrays.asList(executionStack.toArray());
         Collections.reverse(printableStack);
-        return "ExeStack:\n" + printableStack.toString() + "\n" +
+        return "ID: " + id + "\n"+
+                "PID: " + pid + "\n"+
+                "ExeStack:\n" + printableStack.toString() + "\n" +
                 "SymTable:\n" + symbolTable.toString() + '\n' +
                 "Out:\n" + outputList.toString() +  "\n" +
                 "FileTable:" + fileTable.keySet().toString() + '\n' +
@@ -73,5 +83,25 @@ public class ProgramState {
     public void setHeap(Map<Integer,Value> newHeap){
         heap.clear();
         heap.putAll(newHeap);
+    }
+
+    public Boolean isNotCompleted(){
+        return !(executionStack.empty());
+    }
+
+    public ProgramState oneStep() throws MyExceptions {
+        if(executionStack.empty())
+            throw new MyExceptions("Stack is empty");
+        Statement statement = executionStack.pop();
+        return statement.execute(this);
+    }
+
+    public int getID(){
+        return id;
+    }
+
+    public int newID(){
+        nextID++;
+        return nextID;
     }
 }

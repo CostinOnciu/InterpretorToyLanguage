@@ -13,6 +13,7 @@ import Model.Value.IntValue;
 import Model.Value.Value;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class ReadFileStatement implements Statement{
     private final Expression left;
@@ -24,7 +25,7 @@ public class ReadFileStatement implements Statement{
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws MyExceptions {
+    public synchronized ProgramState execute(ProgramState state) throws MyExceptions {
         if(!(state.getSymbolTable().containsKey(varName)))
             throw new UndeclaredVariable("Variable "+ varName +" was not declared in this scope");
         if(!(state.getSymbolTable().get(varName).getType().equals(new IntType())))
@@ -48,7 +49,21 @@ public class ReadFileStatement implements Statement{
         catch (Exception error){
             throw new MyExceptions(this.toString()+" -> " + error.getMessage());
         }
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type expType = left.typeCheck(typeEnv);
+        Type varType = typeEnv.get(varName);
+
+        if(varType == null)
+            throw new UndeclaredVariable("Variable "+ varName +" was not declared in this scope");
+        if(!(varType.equals(new IntType())))
+            throw new VariableNotInteger("Variable "+varName +" should be an integer");
+        if(expType.equals(new StringType()))
+            return typeEnv;
+        else throw new MyExceptions(left.toString()+" -> Expression should return a string value");
     }
 
     @Override

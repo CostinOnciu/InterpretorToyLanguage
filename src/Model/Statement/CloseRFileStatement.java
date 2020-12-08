@@ -5,6 +5,9 @@ import Model.Exceptions.MyExceptions;
 import Model.Expression.Expression;
 import Model.ProgramState;
 import Model.Type.StringType;
+import Model.Type.Type;
+
+import java.util.Map;
 
 public class CloseRFileStatement implements Statement{
     private final Expression exp;
@@ -29,7 +32,15 @@ public class CloseRFileStatement implements Statement{
         catch (Exception error){
             throw new MyExceptions(this.toString()+" -> "+error.getMessage());
         }
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type expType = exp.typeCheck(typeEnv);
+        if(expType.equals(new StringType()))
+            return typeEnv;
+        else throw new MyExceptions("Expression should return a string value");
     }
 
     @Override

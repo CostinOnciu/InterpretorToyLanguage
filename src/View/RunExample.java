@@ -11,9 +11,12 @@ public class RunExample extends Command {
     @Override
     public void execute() {
         try{
-            ctr.allStep(0); }
+            ctr.allStep(); }
         catch (MyExceptions error) {
             System.out.println("ERROR(" + error.getMessage() + ")");
         } //here you must treat the exceptions that can not be solved in the controller
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

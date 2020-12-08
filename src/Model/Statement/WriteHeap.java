@@ -6,11 +6,14 @@ import Model.Expression.Expression;
 import Model.Expression.VariableExpression;
 import Model.ProgramState;
 import Model.Type.ReferenceType;
+import Model.Type.Type;
 import Model.Value.ReferenceValue;
 
+import java.util.Map;
+
 public class WriteHeap implements Statement{
-    private String variableName;
-    private Expression expression;
+    private final String variableName;
+    private final Expression expression;
 
     public WriteHeap(String variableName, Expression expression) {
         this.variableName = variableName;
@@ -18,7 +21,7 @@ public class WriteHeap implements Statement{
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws MyExceptions {
+    public synchronized ProgramState execute(ProgramState state) throws MyExceptions {
         if(!(state.getSymbolTable().containsKey(variableName)))
             throw new UndeclaredVariable("Variable "+variableName+ " is not declared");
         if(!(state.getSymbolTable().get(variableName).getType() instanceof ReferenceType))
@@ -32,7 +35,21 @@ public class WriteHeap implements Statement{
 
         state.getHeap().replace(x.getAddress(),expression.evaluate(state.getSymbolTable(),state.getHeap()));
 
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type expType = expression.typeCheck(typeEnv);
+        Type varType = typeEnv.get(variableName);
+
+        if (varType==null)
+            throw new UndeclaredVariable("Variable "+variableName+ " is not declared");
+        if (varType instanceof ReferenceType){
+            if(expType.equals(((ReferenceType) varType).getInnerType())){
+                return typeEnv;
+            }else throw new MyExceptions("Invalid expression type");
+        }else throw new MyExceptions("Variable should be an reference");
     }
 
     @Override

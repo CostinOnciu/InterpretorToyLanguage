@@ -3,6 +3,9 @@ package Model.Statement;
 import Model.Exceptions.MyExceptions;
 import Model.Expression.Expression;
 import Model.ProgramState;
+import Model.Type.Type;
+
+import java.util.Map;
 
 public class PrintStatement implements Statement{
     private final Expression expression;
@@ -21,12 +24,18 @@ public class PrintStatement implements Statement{
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws MyExceptions {
+    public synchronized ProgramState execute(ProgramState state) throws MyExceptions {
         var stack = state.getExecutionStack();
         var map = state.getSymbolTable();
         var out = state.getOutputList();
 
         out.add(expression.evaluate(map,state.getHeap()));
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        expression.typeCheck(typeEnv);
+        return typeEnv;
     }
 }

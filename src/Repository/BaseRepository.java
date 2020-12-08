@@ -6,10 +6,8 @@ import java.io.IOException;
 import java.util.List;
 
 public interface BaseRepository {
-    //public List<ProgramState> getAll();
-    //public int getLength();
-    //public void add(ProgramState state);
-    //public ProgramState getByIndex(int i);
-    public void logProgramStateExec() throws IOException;
-    public ProgramState getCrtPrg();
+    void logProgramStateExec(ProgramState prg) throws IOException;
+    void setProgramsList(List<ProgramState> programsList);
+    List<ProgramState> getAll();
+    void addFork(ProgramState prg);
 }

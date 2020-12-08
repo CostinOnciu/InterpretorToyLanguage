@@ -1,3 +1,16 @@
+ID: 1
+PID: 0
+ExeStack:
+[(int v | (v=4 | (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {1=true}
+
+ID: 1
+PID: 0
 ExeStack:
 [int v, (v=4 | (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v)))]
 SymTable:
@@ -5,8 +18,21 @@ SymTable:
 Out:
 []
 FileTable:[]
-Heap: {3=(1, ref(bool))}
+Heap: {1=true}
 
+ID: 1
+PID: 0
+ExeStack:
+[int v, (v=4 | (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v)))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(v=4 | (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v)))]
 SymTable:
@@ -16,6 +42,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(v=4 | (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v)))]
+SymTable:
+{v=0}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [v=4, (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v))]
 SymTable:
@@ -25,6 +64,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[v=4, (WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v))]
+SymTable:
+{v=0}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v))]
 SymTable:
@@ -34,6 +86,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE | print(v))]
+SymTable:
+{v=4}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -43,6 +108,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=4}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -52,6 +130,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=4}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -61,6 +152,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=4}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -70,6 +174,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=4}
+Out:
+[4]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -79,6 +196,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=3}
+Out:
+[4]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -88,6 +218,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=3}
+Out:
+[4]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -97,6 +240,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=3}
+Out:
+[4]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -106,6 +262,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=3}
+Out:
+[4, 3]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -115,6 +284,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=2}
+Out:
+[4, 3]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -124,6 +306,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=2}
+Out:
+[4, 3]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -133,6 +328,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=2}
+Out:
+[4, 3]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -142,6 +350,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=2}
+Out:
+[4, 3, 2]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -151,6 +372,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=1}
+Out:
+[4, 3, 2]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -160,6 +394,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | v=(v-1)), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=1}
+Out:
+[4, 3, 2]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -169,6 +416,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[print(v), v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=1}
+Out:
+[4, 3, 2]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -178,6 +438,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[v=(v-1), WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=1}
+Out:
+[4, 3, 2, 1]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
 SymTable:
@@ -187,6 +460,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[WHILE (v>0) DO (print(v) | v=(v-1))END-WHILE, print(v)]
+SymTable:
+{v=0}
+Out:
+[4, 3, 2, 1]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 [print(v)]
 SymTable:
@@ -196,6 +482,19 @@ Out:
 FileTable:[]
 Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[print(v)]
+SymTable:
+{v=0}
+Out:
+[4, 3, 2, 1]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 []
 SymTable:
@@ -205,4 +504,3 @@ Out:
 FileTable:[]
 Heap: {}
 
------------------------------------------------

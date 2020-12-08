@@ -4,19 +4,14 @@ import Model.Exceptions.MyExceptions;
 import Model.Exceptions.VariableNotInteger;
 import Model.Expression.Expression;
 import Model.Type.BoolType;
-import Model.Value.BoolValue;
 import Model.Value.IntValue;
 import Model.Value.Value;
 
 import java.util.Map;
 
 public class DifferenceExpression extends ArithmeticExpression{
-    private final Expression left;
-    private final Expression right;
-
     public DifferenceExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
+        super(left, right);
     }
 
     @Override
@@ -36,4 +31,5 @@ public class DifferenceExpression extends ArithmeticExpression{
 
         return new IntValue(leftInt.getValue()-rightInt.getValue());
     }
+
 }

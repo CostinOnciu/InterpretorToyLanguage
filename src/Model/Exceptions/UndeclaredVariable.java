@@ -10,7 +10,7 @@ public class UndeclaredVariable extends MyExceptions{
 
     @Override
     public String toString() {
-        return "Undeclared Variable";
+        return "Undeclared Variable{"+getMessage()+"}";
     }
     
 }

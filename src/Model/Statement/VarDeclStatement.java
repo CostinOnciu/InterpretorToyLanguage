@@ -7,6 +7,8 @@ import Model.Type.*;
 import Model.Value.IntValue;
 import Model.Value.BoolValue;
 
+import java.util.Map;
+
 public class VarDeclStatement implements Statement {
     private final Type type;
     private final String name;
@@ -30,6 +32,12 @@ public class VarDeclStatement implements Statement {
             throw new AlreadyDeclaredVariable(this.toString()+" -> The variable " + name + " is already declared");
         }
         map.put(name,type.defaultValue());
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        typeEnv.put(name,type);
+        return typeEnv;
     }
 }

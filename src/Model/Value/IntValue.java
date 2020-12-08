@@ -6,10 +6,13 @@ import Model.Type.Type;
 import java.util.Objects;
 
 public class IntValue implements Value {
-    private int value;
+    private final int value;
 
     public IntValue(int value) {
         this.value = value;
+    }
+    public IntValue(IntValue value) {
+        this.value = value.value;
     }
 
     public int getValue() { return value; }

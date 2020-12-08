@@ -7,4 +7,9 @@ public class VariableNotInteger extends MyExceptions{
     public VariableNotInteger(String message) {
         super(message);
     }
+
+    @Override
+    public String toString() {
+        return "VariableNotInteger{"+getMessage()+"}";
+    }
 }

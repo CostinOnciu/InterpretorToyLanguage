@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryRepository implements BaseRepository{
-    //private List<ProgramState> list;
-    ProgramState prg;
-    private String logFilePath;
+    private final List<ProgramState> list;
+    private final String logFilePath;
     //private int length;
 
     public String getLogFilePath() {
@@ -20,43 +19,24 @@ public class InMemoryRepository implements BaseRepository{
     }
 
     public InMemoryRepository(ProgramState prg, String logFilePath) {
-        //this.list = new ArrayList<ProgramState>();
-        //this.length = 0;
-        this.prg = prg;
-        this.logFilePath = logFilePath;
-    }
-
-    /*public InMemoryRepository(List<ProgramState> list,String logFilePath){
-        this.list = list;
-        this.length = list.toArray().length;
+        this.list = new ArrayList<ProgramState>();
+        this.list.add(prg);
         this.logFilePath = logFilePath;
     }
 
     @Override
-    public List<ProgramState> getAll() {
+    public List<ProgramState> getAll(){
         return list;
     }
 
     @Override
-    public int getLength() {
-        return length;
+    public void addFork(ProgramState prg){
+        list.add(prg);
     }
 
     @Override
-    public void add(ProgramState state) {
-        list.add(state);
-        length++;
-    }
-
-    @Override
-    public ProgramState getByIndex(int i) {
-        return list.get(i);
-    }*/
-
-    @Override
-    public void logProgramStateExec() throws IOException {
+    public void logProgramStateExec(ProgramState prg) throws IOException {
         var logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
-        //logFile.append(getCrtPrg().toString());
         logFile.flush();
         logFile.write(prg.toString()+'\n');
         logFile.flush();
@@ -64,7 +44,8 @@ public class InMemoryRepository implements BaseRepository{
     }
 
     @Override
-    public ProgramState getCrtPrg() {
-        return prg;
+    public void setProgramsList (List<ProgramState> programsList){
+        list.clear();
+        list.addAll(programsList);
     }
 }

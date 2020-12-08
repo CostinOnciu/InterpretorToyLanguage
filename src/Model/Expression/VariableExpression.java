@@ -2,6 +2,7 @@ package Model.Expression;
 
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.UndeclaredVariable;
+import Model.Type.Type;
 import Model.Value.Value;
 
 import java.util.Map;
@@ -18,6 +19,13 @@ public class VariableExpression implements Expression{
         if(!symbolTable.containsKey(variable))
             throw new UndeclaredVariable(this.toString()+" -> Variable "+variable+" is not declared in this scope");
         return symbolTable.get(variable);
+    }
+
+    @Override
+    public Type typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        if(typeEnv.containsKey(variable))
+            return typeEnv.get(variable);
+        else throw new UndeclaredVariable(this.toString()+" -> Variable "+variable+" is not declared in this scope");
     }
 
     @Override

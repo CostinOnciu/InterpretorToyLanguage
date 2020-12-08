@@ -6,8 +6,8 @@ import Model.Type.Type;
 import java.util.Objects;
 
 public class ReferenceValue implements Value{
-    private int address;
-    private Type valueType;
+    private final int address;
+    private final Type valueType;
 
     public int getAddress() {
         return address;
@@ -20,6 +20,10 @@ public class ReferenceValue implements Value{
     public ReferenceValue(int address, Type valueType) {
         this.address = address;
         this.valueType = valueType;
+    }
+    public ReferenceValue(ReferenceValue value) {
+        this.address = value.address;
+        this.valueType = value.valueType;
     }
 
     @Override

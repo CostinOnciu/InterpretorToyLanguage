@@ -6,7 +6,7 @@ import Model.Type.Type;
 import java.util.Objects;
 
 public class BoolValue implements Value{
-    private boolean value;
+    private final boolean value;
 
     @Override
     public boolean equals(Object o) {
@@ -23,6 +23,9 @@ public class BoolValue implements Value{
 
     public BoolValue(boolean value) {
         this.value = value;
+    }
+    public BoolValue(BoolValue value){
+        this.value = value.value;
     }
 
     public boolean getValue() {

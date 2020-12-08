@@ -10,6 +10,6 @@ public class MyExceptions extends Exception{
 
     @Override
     public String toString() {
-        return "MyExceptions{}";
+        return "MyExceptions{"+getMessage()+"}";
     }
 }

@@ -4,7 +4,16 @@ import Model.Exceptions.InvalidCondition;
 import Model.Exceptions.MyExceptions;
 import Model.Expression.Expression;
 import Model.ProgramState;
+import Model.Type.BoolType;
+import Model.Type.Type;
 import Model.Value.BoolValue;
+import Model.Value.Value;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class IfStatement implements Statement{
     private final Expression expression;
@@ -52,6 +61,36 @@ public class IfStatement implements Statement{
         else{
             throw new InvalidCondition(this.toString()+" -> Conditional expression is not a boolean");
         }
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type expType = expression.typeCheck(typeEnv);
+        if(expType.equals(new BoolType())){
+            thenStatement.typeCheck(typeEnv.entrySet().stream()
+                    .map(e -> {
+                        try {
+                            return new java.util.AbstractMap.SimpleEntry<String, Type>(e.getKey(), Type.copy(e.getValue()));
+                        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException noSuchMethodException) {
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue)));
+            elseStatement.typeCheck(typeEnv.entrySet().stream()
+                    .map(e -> {
+                        try {
+                            return new java.util.AbstractMap.SimpleEntry<String, Type>(e.getKey(), Type.copy(e.getValue()));
+                        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException noSuchMethodException) {
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue)));
+            //thenStatement.typeCheck(typeEnv.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue)));
+            //elseStatement.typeCheck(typeEnv.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue)));
+            return typeEnv;
+        }else throw new InvalidCondition(this.toString()+" -> Conditional expression is not a boolean");
     }
 }

@@ -2,6 +2,9 @@ package Model.Statement;
 
 import Model.Exceptions.MyExceptions;
 import Model.ProgramState;
+import Model.Type.Type;
+
+import java.util.Map;
 
 public class CompoundStatement implements Statement{
     private final Statement leftStatement;
@@ -19,6 +22,11 @@ public class CompoundStatement implements Statement{
         var stack = state.getExecutionStack();
         stack.push(rightStatement);
         stack.push(leftStatement);
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        return rightStatement.typeCheck(leftStatement.typeCheck(typeEnv));
     }
 }

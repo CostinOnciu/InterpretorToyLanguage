@@ -2,9 +2,7 @@ package Model.Expression.LogicExpression;
 
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.VariableNotBoolean;
-import Model.Exceptions.VariableNotInteger;
 import Model.Expression.Expression;
-import Model.Type.BoolType;
 import Model.Type.IntType;
 import Model.Value.BoolValue;
 import Model.Value.Value;
@@ -12,12 +10,8 @@ import Model.Value.Value;
 import java.util.Map;
 
 public class AndExpression extends LogicExpression{
-    private final Expression left;
-    private final Expression right;
-
     public AndExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
+        super(left, right);
     }
 
     @Override

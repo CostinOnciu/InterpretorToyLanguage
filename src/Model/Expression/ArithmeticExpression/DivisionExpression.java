@@ -10,12 +10,8 @@ import Model.Value.Value;
 import java.util.Map;
 
 public class DivisionExpression extends ArithmeticExpression{
-    private final Expression left;
-    private final Expression right;
-
     public DivisionExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
+        super(left, right);
     }
 
     @Override

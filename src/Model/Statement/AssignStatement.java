@@ -8,6 +8,8 @@ import Model.Expression.*;
 import Model.Type.Type;
 import Model.Value.*;
 
+import java.util.Map;
+
 public class AssignStatement implements Statement{
     private final String name;
     private final Expression value;
@@ -46,7 +48,18 @@ public class AssignStatement implements Statement{
                 throw new VariableTypeDifferent(this.toString()+" -> Type of expression and type of variable do not match");
             }
         }
-        return state;
+        return null;
+    }
+
+    @Override
+    public Map<String, Type> typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
+        Type varType = typeEnv.get(name);
+        if(varType == null)
+            throw new UndeclaredVariable("Variable " + name + " is not declared in this scope");
+        Type expType = value.typeCheck(typeEnv);
+        if (varType.equals(expType))
+            return typeEnv;
+        else throw new VariableTypeDifferent("Type of expression and type of variable do not match");
     }
 }
 

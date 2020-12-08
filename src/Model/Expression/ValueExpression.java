@@ -1,9 +1,7 @@
 package Model.Expression;
 
-import Model.Type.BoolType;
-import Model.Type.IntType;
-import Model.Type.ReferenceType;
-import Model.Type.StringType;
+import Model.Exceptions.MyExceptions;
+import Model.Type.*;
 import Model.Value.*;
 
 import java.util.Map;
@@ -34,6 +32,11 @@ public class ValueExpression implements Expression{
             return new ReferenceValue(r.getAddress(),r.getValueType());
         }
         return null;
+    }
+
+    @Override
+    public Type typeCheck(Map<String, Type> typeEnv) {
+        return value.getType();
     }
 
     @Override

@@ -1,0 +1,330 @@
+ID: 1
+PID: 0
+ExeStack:
+[(ref(int) v | (new(v,20) | (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {1=true}
+
+ID: 1
+PID: 0
+ExeStack:
+[ref(int) v, (new(v,20) | (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {1=true}
+
+ID: 1
+PID: 0
+ExeStack:
+[ref(int) v, (new(v,20) | (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(v,20) | (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))))]
+SymTable:
+{v=(0, int)}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(v,20) | (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))))]
+SymTable:
+{v=(0, int)}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(v,20), (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))))]
+SymTable:
+{v=(0, int)}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(v,20), (print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))))]
+SymTable:
+{v=(0, int)}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(v) | (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(v), (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(v), (ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ref(ref(int)) w | (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5))))))]
+SymTable:
+{v=(1, int)}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[ref(ref(int)) w, (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))]
+SymTable:
+{v=(1, int)}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[ref(ref(int)) w, (new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))]
+SymTable:
+{v=(1, int)}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))]
+SymTable:
+{v=(1, int), w=(0, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(w,v) | (print(*(*w)) | (new(v,30) | print((*(*w)+5)))))]
+SymTable:
+{v=(1, int), w=(0, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(w,v), (print(*(*w)) | (new(v,30) | print((*(*w)+5))))]
+SymTable:
+{v=(1, int), w=(0, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(w,v), (print(*(*w)) | (new(v,30) | print((*(*w)+5))))]
+SymTable:
+{v=(1, int), w=(0, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(*(*w)) | (new(v,30) | print((*(*w)+5))))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(*(*w)) | (new(v,30) | print((*(*w)+5))))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(*(*w)), (new(v,30) | print((*(*w)+5)))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(*(*w)), (new(v,30) | print((*(*w)+5)))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int)]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(v,30) | print((*(*w)+5)))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[(new(v,30) | print((*(*w)+5)))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(v,30), print((*(*w)+5))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[new(v,30), print((*(*w)+5))]
+SymTable:
+{v=(1, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int)}
+
+ID: 1
+PID: 0
+ExeStack:
+[print((*(*w)+5))]
+SymTable:
+{v=(3, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int), 3=30}
+
+ID: 1
+PID: 0
+ExeStack:
+[print((*(*w)+5))]
+SymTable:
+{v=(3, int), w=(2, ref(int))}
+Out:
+[(1, int), 20]
+FileTable:[]
+Heap: {1=20, 2=(1, int), 3=30}
+
+ID: 1
+PID: 0
+ExeStack:
+[]
+SymTable:
+{v=(3, int), w=(2, ref(int))}
+Out:
+[(1, int), 20, 25]
+FileTable:[]
+Heap: {1=20, 2=(1, int), 3=30}
+
