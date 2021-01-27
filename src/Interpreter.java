@@ -20,22 +20,19 @@ import View.ExitCommand;
 import View.RunExample;
 import View.TextMenu;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.stream.Collectors;
 
-class Interpreter {
+public class Interpreter {
     public static void main(String[] args) {
         Statement ex1 = new CompoundStatement(new VarDeclStatement(new IntType(), "v"),
                 new CompoundStatement(new AssignStatement("v", new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))));
         var stack1 = new Stack<Statement>();
         stack1.push(ex1);
-        ProgramState prg1 = new ProgramState(stack1, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg1 = new ProgramState(stack1, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo1 = new InMemoryRepository(prg1, "log1.txt");
         Controller ctr1 = new Controller(repo1, Executors.newFixedThreadPool(2));
 
@@ -51,7 +48,7 @@ class Interpreter {
 
         var stack2 = new Stack<Statement>();
         stack2.push(ex2);
-        ProgramState prg2 = new ProgramState(stack2, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg2 = new ProgramState(stack2, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo2 = new InMemoryRepository(prg2, "log2.txt");
         Controller ctr2 = new Controller(repo2, Executors.newFixedThreadPool(2));
 
@@ -59,7 +56,7 @@ class Interpreter {
                 new AssignStatement("a", new ValueExpression(new BoolValue(true))));
         var stack3 = new Stack<Statement>();
         stack3.push(ex3);
-        ProgramState prg3 = new ProgramState(stack3, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg3 = new ProgramState(stack3, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo3 = new InMemoryRepository(prg3, "log3.txt");
         Controller ctr3 = new Controller(repo3, Executors.newFixedThreadPool(2));
 
@@ -74,7 +71,7 @@ class Interpreter {
                                                                         ,new ValueExpression(new IntValue(5)))))))))));
         var stack4 = new Stack<Statement>();
         stack4.push(ex4);
-        ProgramState prg4 = new ProgramState(stack4, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg4 = new ProgramState(stack4, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo4 = new InMemoryRepository(prg4,"log4.txt");
         Controller ctr4 = new Controller(repo4, Executors.newFixedThreadPool(2));
 
@@ -86,7 +83,7 @@ class Interpreter {
                         new PrintStatement(new VariableExpression("v")))));
         var stack5 = new Stack<Statement>();
         stack5.push(ex5);
-        ProgramState prg5 = new ProgramState(stack5, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg5 = new ProgramState(stack5, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo5 = new InMemoryRepository(prg5,"log5.txt");
         Controller ctr5 = new Controller(repo5, Executors.newFixedThreadPool(2));
 
@@ -100,26 +97,9 @@ class Interpreter {
                                                                 new PrintStatement(new ReadHeap(new VariableExpression("a"))))))),
                                                         new CompoundStatement(new PrintStatement(new VariableExpression("v")),
                                                                 new PrintStatement(new ReadHeap(new VariableExpression("a")))))))));
-
-        Statement ex7 = new CompoundStatement(new VarDeclStatement(new IntType(),"v"),
-                new CompoundStatement(new VarDeclStatement(new ReferenceType(new IntType()),"a"),
-                        new CompoundStatement(new AssignStatement("v", new ValueExpression(new IntValue(10))),
-                                new CompoundStatement(new Halloc("a", new ValueExpression(new IntValue(22))),
-                                        new CompoundStatement(new ForkStatement(new CompoundStatement(new WriteHeap("a", new ValueExpression(new IntValue(30))),
-                                                new CompoundStatement(new AssignStatement("v", new ValueExpression(new IntValue(32))),
-                                                        new CompoundStatement(new PrintStatement(new VariableExpression("v")),
-                                                                new PrintStatement(new ReadHeap(new VariableExpression("a"))))))),
-                                                new CompoundStatement(new PrintStatement(new VariableExpression("v")),
-                                                        new PrintStatement(new ReadHeap(new VariableExpression("a")))))))));
-        var stack7 = new Stack<Statement>();
-        stack7.push(ex7);
-        ProgramState prg7 = new ProgramState(stack7, new HashMap<>(),new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
-        BaseRepository repo7= new InMemoryRepository(prg7,"log7.txt");
-        Controller ctr7 = new Controller(repo7,Executors.newFixedThreadPool(2));
-
         var stack6 = new Stack<Statement>();
         stack6.push(ex6);
-        ProgramState prg6 = new ProgramState(stack6, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(),1,0);
+        ProgramState prg6 = new ProgramState(stack6, new HashMap<>(), new ArrayList<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         BaseRepository repo6 = new InMemoryRepository(prg6,"log6.txt");
         Controller ctr6 = new Controller(repo6,Executors.newFixedThreadPool(2));
 
@@ -193,18 +173,6 @@ class Interpreter {
         catch (MyExceptions exception) {
             System.out.println("\n");
             System.out.println("ERROR FOR EX6 :" + ex6);
-            System.out.println("the program won't run because it has the following error");
-            System.out.println(exception.toString());
-            System.out.println("\n");
-        }
-
-        try {
-            ex7.typeCheck(new HashMap<>());
-            menu.addCommand(new RunExample("77", ex7.toString(), ctr7));
-        }
-        catch (MyExceptions exception) {
-            System.out.println("\n");
-            System.out.println("ERROR FOR EX7 :" + ex7);
             System.out.println("the program won't run because it has the following error");
             System.out.println(exception.toString());
             System.out.println("\n");

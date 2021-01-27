@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class InMemoryRepository implements BaseRepository{
     private final List<ProgramState> list;
@@ -47,5 +48,10 @@ public class InMemoryRepository implements BaseRepository{
     public void setProgramsList (List<ProgramState> programsList){
         list.clear();
         list.addAll(programsList);
+    }
+
+    @Override
+    public String toString() {
+        return list.stream().map(ProgramState::getExecutionStack).collect(Collectors.toList()).toString();
     }
 }

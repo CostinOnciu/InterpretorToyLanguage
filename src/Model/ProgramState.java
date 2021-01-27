@@ -3,10 +3,10 @@ package Model;
 import Model.Exceptions.MyExceptions;
 import Model.Statement.Statement;
 import Model.Value.Value;
+import javafx.util.Pair;
 
 import java.io.BufferedReader;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ProgramState {
     private final Stack<Statement> executionStack;
@@ -14,16 +14,23 @@ public class ProgramState {
     private final List<Value> outputList;
     private final Map<String, BufferedReader> fileTable;
     private final Map<Integer,Value> heap;
+    private final Map<Integer,Integer> latchTable;
+    private final Map<Integer,Pair<Integer,List<Integer>>> semaphoreTable;
     private final int id;
     private final int pid;
-    private int nextID=1;
+    static private int nextID=1;
 
-    public ProgramState(Stack<Statement> stack, Map<String, Value> map, List<Value> list, Map<String, BufferedReader> table, Map<Integer, Value> heap,int id,int pid){
+    private int latchFreeAddr = 0;
+    private int semaphoreFreeAddr = 0;
+
+    public ProgramState(Stack<Statement> stack, Map<String, Value> map, List<Value> list, Map<String, BufferedReader> table, Map<Integer, Value> heap, Map<Integer, Integer> latchTable, Map<Integer,Pair<Integer,List<Integer>>> semaphoreTable, int id, int pid){
         executionStack = stack;
         symbolTable = map;
         outputList = list;
         fileTable = table;
         this.heap = heap;
+        this.latchTable = latchTable;
+        this.semaphoreTable = semaphoreTable;
         this.id = id;
         this.pid = pid;
     }
@@ -58,7 +65,9 @@ public class ProgramState {
                 "SymTable:\n" + symbolTable.toString() + '\n' +
                 "Out:\n" + outputList.toString() +  "\n" +
                 "FileTable:" + fileTable.keySet().toString() + '\n' +
-                "Heap: " + heap.toString() + '\n';
+                "Heap: " + heap.toString() + '\n'+
+                "LatchTable: " + latchTable.toString() + '\n' +
+                "SemaphoreTable: " + semaphoreTable.toString() + '\n';
     }
 
     public void addNewFile(String fileName,BufferedReader bufferedReader){
@@ -78,6 +87,16 @@ public class ProgramState {
         }
         heap.put(1,value);
         return 1;
+    }
+
+    public int getFreeLatchAddress(){
+        latchFreeAddr++;
+        return latchFreeAddr;
+    }
+
+    public int getFreeSemaphoreAddress(){
+        semaphoreFreeAddr++;
+        return semaphoreFreeAddr;
     }
 
     public void setHeap(Map<Integer,Value> newHeap){
@@ -103,5 +122,13 @@ public class ProgramState {
     public int newID(){
         nextID++;
         return nextID;
+    }
+
+    public Map<Integer, Integer> getLatchTable() {
+        return latchTable;
+    }
+
+    public Map<Integer,Pair<Integer,List<Integer>>> getSemaphoreTable() {
+        return semaphoreTable;
     }
 }

@@ -3,7 +3,6 @@ package Model.Statement;
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.UndeclaredVariable;
 import Model.Expression.Expression;
-import Model.Expression.VariableExpression;
 import Model.ProgramState;
 import Model.Type.ReferenceType;
 import Model.Type.Type;

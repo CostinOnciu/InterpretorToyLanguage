@@ -1,8 +1,6 @@
 package Controller;
 
-import Model.Exceptions.MyExceptions;
 import Model.Expression.ValueExpression;
-import Model.Expression.VariableExpression;
 import Model.ProgramState;
 import Model.Type.BoolType;
 import Model.Type.IntType;
@@ -11,17 +9,13 @@ import Model.Value.BoolValue;
 import Model.Value.ReferenceValue;
 import Model.Value.Value;
 import Repository.BaseRepository;
-import Repository.InMemoryRepository;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.stream.Collectors;
-import java.util.stream.*;
 
 public class Controller {
     private final BaseRepository repository;
@@ -55,9 +49,8 @@ public class Controller {
                 .map(future -> {
                     try {
                         return future.get();
-                    }
-                    catch (Exception error){
-                        System.out.println(error.toString());
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.printStackTrace();
                         return null;
                     }
                 })
@@ -76,7 +69,7 @@ public class Controller {
         repository.setProgramsList(programStateList);
     }
 
-    private void collectGarbage(){
+    public void collectGarbage(){
         List<Integer> addresses = new ArrayList<>();
         repository.getAll().forEach(programState -> {
             var x = programState.getSymbolTable().values().stream()
@@ -112,7 +105,15 @@ public class Controller {
                     return false;
                 })
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
+
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        var x = addresses.stream().map(Object::toString).reduce("", (a,b)->a+b).describeConstable().stream().collect(Collectors.toList());
+        //var y = (List<Integer>)new ArrayList<Integer>(x);
+        //System.out.println(x);
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
+
 
     public void allStep() throws Exception {
         List<ProgramState> programStateList = removeCompleted(repository.getAll());
@@ -128,6 +129,19 @@ public class Controller {
         }
         executor.shutdownNow();
         repository.setProgramsList(programStateList);
+    }
+
+    public ExecutorService getExecutor() {
+        return executor;
+    }
+
+    @Override
+    public String toString() {
+        return repository.toString();
+    }
+
+    public BaseRepository getRepository(){
+        return this.repository;
     }
            /* Set<Integer> usedAddressesSet = currentState.getSymbolTable().values().stream()
                     .filter(value -> value instanceof ReferenceValue)

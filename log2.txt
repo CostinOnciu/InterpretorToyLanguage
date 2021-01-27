@@ -1,131 +1,368 @@
+ID: 1
+PID: 0
 ExeStack:
-[string varf, (varf=test.in;(OpenRFile(varf);(int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))))))]
+[(string varf | (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))))]
 SymTable:
 {}
 Out:
 []
 FileTable:[]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(varf=test.in;(OpenRFile(varf);(int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))))))]
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
 SymTable:
 {varf=}
 Out:
 []
 FileTable:[]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[varf=test.in, (OpenRFile(varf);(int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf)))))))]
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
 SymTable:
 {varf=}
 Out:
 []
 FileTable:[]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(OpenRFile(varf);(int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf)))))))]
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
 SymTable:
 {varf=test.in}
 Out:
 []
 FileTable:[]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[OpenRFile(varf), (int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))))]
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
 SymTable:
 {varf=test.in}
 Out:
 []
 FileTable:[]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(int varc;(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))))]
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
 SymTable:
 {varf=test.in}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[int varc, (ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf)))))]
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
 SymTable:
 {varf=test.in}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(ReadFile(varf,varc);(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf)))))]
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
 SymTable:
 {varf=test.in, varc=0}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[ReadFile(varf,varc), (print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))]
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
 SymTable:
 {varf=test.in, varc=0}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(print(varc);(ReadFile(varf,varc);(print(varc);CloseRFile(varf))))]
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
 SymTable:
 {varf=test.in, varc=18}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[print(varc), (ReadFile(varf,varc);(print(varc);CloseRFile(varf)))]
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
 SymTable:
 {varf=test.in, varc=18}
 Out:
 []
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(ReadFile(varf,varc);(print(varc);CloseRFile(varf)))]
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
 SymTable:
 {varf=test.in, varc=18}
 Out:
 [18]
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[ReadFile(varf,varc), (print(varc);CloseRFile(varf))]
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
 SymTable:
 {varf=test.in, varc=18}
 Out:
 [18]
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[(print(varc);CloseRFile(varf))]
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | CloseRFile(varf);)]
 SymTable:
 {varf=test.in, varc=20}
 Out:
 [18]
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[print(varc), CloseRFile(varf)]
+[(print(varc) | CloseRFile(varf);)]
 SymTable:
 {varf=test.in, varc=20}
 Out:
 [18]
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
 ExeStack:
-[CloseRFile(varf)]
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
 SymTable:
 {varf=test.in, varc=20}
 Out:
 [18, 20]
 FileTable:[test.in]
+Heap: {}
 
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[test.in]
+Heap: {}
+
+ID: 1
+PID: 0
 ExeStack:
 []
 SymTable:
@@ -133,5 +370,855 @@ SymTable:
 Out:
 [18, 20]
 FileTable:[]
+Heap: {}
 
------------------------------------------------
+ID: 1
+PID: 0
+ExeStack:
+[(string varf | (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(string varf | (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[string varf, (varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(varf=test.in | (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[varf=test.in, (OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(OpenRFile(varf) | (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[OpenRFile(varf), (int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(int varc | (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[int varc, (ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=0}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);)))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), (ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(ReadFile(varf,varc) | (print(varc) | CloseRFile(varf);))]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[ReadFile(varf,varc), (print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=18}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[(print(varc) | CloseRFile(varf);)]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[print(varc), CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[CloseRFile(varf);]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[test.in]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+
+ID: 1
+PID: 0
+ExeStack:
+[]
+SymTable:
+{varf=test.in, varc=20}
+Out:
+[18, 20]
+FileTable:[]
+Heap: {}
+LatchTable: {}
+SemaphoreTable: {}
+

@@ -3,9 +3,7 @@ package Model.Statement;
 import Model.Exceptions.AlreadyDeclaredVariable;
 import Model.Exceptions.MyExceptions;
 import Model.ProgramState;
-import Model.Type.*;
-import Model.Value.IntValue;
-import Model.Value.BoolValue;
+import Model.Type.Type;
 
 import java.util.Map;
 

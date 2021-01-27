@@ -1,7 +1,6 @@
 package Model.Expression.RelationshipExpressions;
 
 import Model.Exceptions.MyExceptions;
-import Model.Exceptions.VariableNotBoolean;
 import Model.Exceptions.VariableNotInteger;
 import Model.Expression.Expression;
 import Model.Type.BoolType;

@@ -21,6 +21,8 @@ public abstract class ArithmeticExpression implements Expression {
     public Type typeCheck(Map<String, Type> typeEnv) throws MyExceptions {
         Type type1,type2;
         type1 = left.typeCheck(typeEnv);
+        //System.out.println(left);
+        //System.out.println(type1);
         type2 = right.typeCheck(typeEnv);
 
         if(type1.equals(new IntType())) {

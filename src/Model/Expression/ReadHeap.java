@@ -1,10 +1,8 @@
 package Model.Expression;
 
 import Model.Exceptions.MyExceptions;
-import Model.Type.IntType;
 import Model.Type.ReferenceType;
 import Model.Type.Type;
-import Model.Value.IntValue;
 import Model.Value.ReferenceValue;
 import Model.Value.Value;
 

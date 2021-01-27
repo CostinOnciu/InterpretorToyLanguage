@@ -3,15 +3,12 @@ package Model.Statement;
 import Model.Exceptions.MyExceptions;
 import Model.ProgramState;
 import Model.Type.Type;
-import Model.Value.IntValue;
 import Model.Value.Value;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ForkStatement implements Statement{
@@ -37,7 +34,9 @@ public class ForkStatement implements Statement{
                 .filter(Objects::nonNull)
                 .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
         //var sym = new HashMap<String, Value>(state.getSymbolTable());
-        return new ProgramState(exeStack,symbolTable,state.getOutputList(),state.getFileTable(),state.getHeap(),state.newID(),state.getID());
+        //System.out.println(state.newID());
+        //System.out.println(state.getID());
+        return new ProgramState(exeStack,symbolTable,state.getOutputList(),state.getFileTable(),state.getHeap(), state.getLatchTable(), state.getSemaphoreTable(), state.newID(),state.getID());
     }
 
     @Override

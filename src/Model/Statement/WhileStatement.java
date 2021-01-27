@@ -9,7 +9,6 @@ import Model.Type.Type;
 import Model.Value.BoolValue;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;

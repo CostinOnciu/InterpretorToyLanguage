@@ -1,5 +1,8 @@
 package View;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class TextMenu {
     private Map<String, Command> commands;

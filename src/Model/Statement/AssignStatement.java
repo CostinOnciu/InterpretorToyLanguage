@@ -3,10 +3,10 @@ package Model.Statement;
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.UndeclaredVariable;
 import Model.Exceptions.VariableTypeDifferent;
+import Model.Expression.Expression;
 import Model.ProgramState;
-import Model.Expression.*;
 import Model.Type.Type;
-import Model.Value.*;
+import Model.Value.Value;
 
 import java.util.Map;
 

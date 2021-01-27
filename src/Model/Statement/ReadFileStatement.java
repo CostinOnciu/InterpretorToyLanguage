@@ -10,9 +10,7 @@ import Model.Type.IntType;
 import Model.Type.StringType;
 import Model.Type.Type;
 import Model.Value.IntValue;
-import Model.Value.Value;
 
-import java.io.IOException;
 import java.util.Map;
 
 public class ReadFileStatement implements Statement{

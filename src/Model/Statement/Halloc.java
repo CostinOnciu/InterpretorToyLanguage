@@ -1,6 +1,5 @@
 package Model.Statement;
 
-import Model.Exceptions.AlreadyDeclaredVariable;
 import Model.Exceptions.MyExceptions;
 import Model.Exceptions.UndeclaredVariable;
 import Model.Expression.Expression;

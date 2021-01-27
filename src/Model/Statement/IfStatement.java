@@ -7,10 +7,8 @@ import Model.ProgramState;
 import Model.Type.BoolType;
 import Model.Type.Type;
 import Model.Value.BoolValue;
-import Model.Value.Value;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;

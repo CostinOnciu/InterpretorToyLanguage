@@ -1,23 +1,20 @@
-import Controller.Controller;
 import Model.Exceptions.MyExceptions;
-import Model.Expression.*;
-import Model.Expression.ArithmeticExpression.MultiplicationExpression;
-import Model.Expression.ArithmeticExpression.SumExpression;
-import Model.Value.*;
-import Model.Statement.*;
-import Model.Type.*;
 import Model.ProgramState;
-import Repository.*;
-import View.*;
+import Model.Statement.ForkStatement;
+import Model.Statement.Statement;
+import Model.Statement.VarDeclStatement;
+import Model.Type.IntType;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Stack;
 
 public class main {
     public static void main(String[] args) throws MyExceptions {
         var statement = new ForkStatement(new VarDeclStatement(new IntType(),"x"));
         var stack = new Stack<Statement>();
         stack.push(statement);
-        var prg = new ProgramState(stack,new HashMap<>(),new ArrayList<>(),new HashMap<>(),new HashMap<>(),1,0);
+        var prg = new ProgramState(stack,new HashMap<>(),new ArrayList<>(),new HashMap<>(),new HashMap<>(), new HashMap<>(), new HashMap<>(), 1,0);
         statement.execute(prg);
     }
 }
